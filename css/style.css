@@ -1,0 +1,88 @@
+:root {
+    font-family: "Open Sans", sans-serif;
+    --background-col: #111111;
+    --secondary-col: #212121;
+    --neutral-100: #fff;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: var(--background-col);
+    color: var(--neutral-100);
+    display: grid;
+    grid-template-rows: 160px 1fr;
+    margin: 0px;
+    height: 100vh;
+    position: relative;
+}
+
+video {
+    max-width: 100%;
+}
+
+.hummingbird-heading {
+    font-size: 4rem;
+    font-weight: 800;
+    height: 90px;
+    text-align: center;
+    position: relative;
+}
+
+.hammingbird-wrapper {
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.hammingbird-video {
+    background-color: var(--secondary-col);
+    display: grid;
+    place-items: center;
+    position: absolute;
+    width: fit-content;
+}
+
+.hammingbird-wrapper .overlay {
+    background-color: var(--secondary-col);
+    font-size: 4rem;
+    font-weight: 100;
+    display: grid;
+    place-items: center;
+    inset: 0px;
+    position: absolute;
+    width: 100%;
+}
+
+.hammingbird-wrapper .blend {
+    background-color: var(--secondary-col);
+    display: grid;
+    place-items: center;
+    inset: 0px;
+    mix-blend-mode: color;
+    position: absolute;
+    width: 100%;
+}
+
+.hammingbird-wrapper .hammingbird-video:hover .blend{
+    /* mix-blend-mode: color; */
+    animation: reveal 3s ease-out 3s forwards;
+}
+
+.hammingbird-wrapper .hammingbird-video:hover .overlay {
+    /* mix-blend-mode: color; */
+    animation: reveal 3s forwards;
+}
+
+.hummingbird {
+    display: block;
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
